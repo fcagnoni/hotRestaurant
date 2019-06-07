@@ -6,12 +6,43 @@ var path = require("path");
 var app = express();
 var PORT = 3000;
 
-//express config
 
+// Sets up the Express App
+// =============================================================
+var app = express();
+var PORT = process.env.PORT || 3000;
+
+// Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+//  (DATA)
+// =============================================================
 
+var viewTable = 
+[
+  {
+  customerName: "Randolph Jaffe",
+  phoneNumber: "555-555-1234",
+  customerEmail: "rjaffe@deadletteroffice.com",
+  customerID: "greatandsecret"
+  },
+  {
+  customerName: "Nena Gardner ",
+  phoneNumber: "123-456-7899",
+  customerEmail: "sample1@email.com",
+  customerID: "Awesome"
+  },
+  {
+    customerName: "Francisco Cagnoni ",
+    phoneNumber: "123-456-7899",
+    customerEmail: "sample1@email.com",
+    customerID: "Great"
+    }
+];
+
+
+console.log(viewTable);
 //Paths
 
 app.get("/", function(req, res) {
@@ -30,5 +61,6 @@ app.get("/add", function(req, res) {
 //Listener
 
 app.listen(PORT, function() {
-	console.log("App listening on PORT: " + PORT);
+  console.log("App listening on PORT: " + PORT);
+  
 });
