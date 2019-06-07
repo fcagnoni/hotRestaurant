@@ -64,3 +64,25 @@ app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
   
 });
+
+
+// Displays all tables
+app.get("/api/tables", function(req, res) {
+  return res.json(characters);
+});
+
+
+// Displays a single table, or returns false
+app.get("/api/table/:viewTable", function(req, res) {
+  var chosen = req.params.character;
+
+  console.log(chosen);
+
+  for (var i = 0; i < viewTable.length; i++) {
+    if (chosen === tables[i].routeName) {
+      return res.json(tables[i]);
+    }
+  }
+
+  return res.json(false);
+});
