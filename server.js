@@ -15,11 +15,11 @@ app.use(express.json());
 //Paths
 
 app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "view.html"));
+  res.sendFile(path.join(__dirname, "tables.html"));
 });
 
 app.get("/add", function(req, res) {
-  res.sendFile(path.join(__dirname, "make.html"));
+  res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
 app.get("/add", function(req, res) {
